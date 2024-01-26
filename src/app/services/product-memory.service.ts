@@ -7,6 +7,10 @@ import { CreateProductDto, UpdateProductDto } from "../dtos/product-dto";
 export class ProductMemoryService {
   private products: Product[] = [];
 
+  getAll() {
+    return this.products;
+  }
+
   create(data: CreateProductDto): Product {
     const newProduct = {
       ...data,
@@ -17,7 +21,6 @@ export class ProductMemoryService {
         image: faker.image.url(),
       }
     }
-    this.products.push(newProduct);
     return this.add(newProduct);
   }
 
