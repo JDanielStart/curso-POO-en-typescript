@@ -23,7 +23,7 @@ export class ProductHttpService implements ProductService {
   }
 
   async findOne(id: Product["id"]) {
-    const { data } = await axios.get(`this.url/${id}`);
+    const { data } = await axios.get(`${this.url}/${id}`);
     return data;
   }
 
