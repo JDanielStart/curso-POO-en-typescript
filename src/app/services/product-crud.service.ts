@@ -1,3 +1,4 @@
+import { validate } from "class-validator";
 import { UpdateProductDto } from "../dtos/product-dto";
 import { Product } from "../models/product.model";
 import { BaseHttpService } from "./base-http.service";
@@ -9,6 +10,7 @@ export class ProductCRUDServices {
 
   async update(id: Product["id"], dto: UpdateProductDto) {
     this.http.otroRequest;
+    //validate(dto);
     return this.http.update(id, dto);
   }
 }
